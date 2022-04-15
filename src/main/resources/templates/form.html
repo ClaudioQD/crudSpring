@@ -8,30 +8,45 @@
 </head>
 <body>
 
-	<div class="container mt-4">
-		<table>
-			<thead>
-				<tr>
-					<th>ID  </th>
-					<th>NOMBRE  </th>
-					<th>TELEFONO  </th>
-					<th>ACCIONES  </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="persona:${personas}">
-					<td th:text="${persona.id}">jjj</td>
-					<td th:text="${persona.name}">jjjj</td>
-					<td th:text="${persona.telefono}">jjjj</td>
-					<td>
-					<a class ="btn btn-warning">Editar</a>
-					<a class ="btn btn-danger">Eliminar</a>
-					</td>
-				</tr>
-				
-			</tbody>
-		</table>
+	
+    <div class="container mt-4">
 
-	</div>
+        <div class="col-sm-6">
+            <form th:action="@{/save}" th:object=${persona} method="POST">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-body">
+                        
+                        		<div class="form-group">
+                        			<label>ID</label>
+                        			<input th:field="*{id}" type="text" class="form-control" >
+                        		</div>
+                        		<div class="form-group">
+                        			<label>NOMBRES</label>
+                        			<input th:field="*{name}" type="text" class="form-control" >
+                        		</div>
+                        		<div class="form-group">
+                        			<label>TELEFONO</label>
+                        			<input th:field="*{telefono}" type="text" class="form-control" >
+                        		</div>
+                        		
+                        		
+                            <div class="card-footer">
+
+								<input type="submit" value="guardar" class="btn btn-success">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
 </body>
 </html>

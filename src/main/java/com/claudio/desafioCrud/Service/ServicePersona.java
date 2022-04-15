@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.claudio.desafioCrud.InterfaceService.ServiceInterfacePersona;
 import com.claudio.desafioCrud.Modelo.Persona;
@@ -29,10 +30,14 @@ public  class ServicePersona implements ServiceInterfacePersona {
 		return null;
 	}
 
+	
 	@Override
 	public int save(Persona InstanciaPersona) {
-		// TODO Auto-generated method stub
-		return 0;
+		int resultado=0;
+		Persona persona=data.save(InstanciaPersona);
+		if(!persona.equals(null)) {resultado=1;
+		}
+		return resultado;
 	}
 
 	@Override
