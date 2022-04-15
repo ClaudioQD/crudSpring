@@ -44,7 +44,7 @@ public  class ServicePersona implements ServiceInterfacePersona {
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		data.deleteById(id);
 		
 	}
 
