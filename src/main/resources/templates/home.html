@@ -9,7 +9,7 @@
 <body>
 
 	<div class="container mt-4">
-	<a th:href="@{/new}" class="btn btn-primary"></a>
+	<a th:href="@{/new}" class="btn btn-primary">GUARDAR</a>
 		<table>
 			<thead>
 				<tr>
@@ -21,11 +21,15 @@
 			</thead>
 			<tbody>
 				<tr th:each="persona:${personas}">
-					<td th:text="${persona.id}">jjj</td>
-					<td th:text="${persona.name}">jjjj</td>
-					<td th:text="${persona.telefono}">jjjj</td>
+					<td th:text="${persona.id}">ID</td>
+					<td th:text="${persona.name}">NOMBRE</td>
+					<td th:text="${persona.telefono}">TELEFONO</td>
 					<td>
-					<a class ="btn btn-warning">Editar</a>
+				
+					<a  th:href="@{/editar/}+${persona.id}" class ="btn btn-danger">Editar</a>
+					</td>
+					<td>
+				
 					<a class ="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>

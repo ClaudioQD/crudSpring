@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 import com.claudio.desafioCrud.InterfaceService.ServiceInterfacePersona;
 import com.claudio.desafioCrud.Modelo.Persona;
@@ -27,7 +27,9 @@ public  class ServicePersona implements ServiceInterfacePersona {
 	@Override
 	public Optional<Persona> listarId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return  data.findById(id);
+		
 	}
 
 	
